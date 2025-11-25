@@ -1,3 +1,12 @@
+#!/bin/bash
+# One-click installer for kbash.sh
+set -e
+
+# Variables
+REPO_RAW_BASE="https://raw.githubusercontent.com/kainatquaderee/kbash/main"
+KBASH_FILE="$HOME/.kbash.sh"
+BASHRC="$HOME/.bashrc"
+
 kbash_banner() {
     # Only run in interactive shells and when stdout is a tty
     [[ $- != *i* ]] && return
@@ -33,18 +42,7 @@ kbash_banner() {
 
 # call banner (will run only in interactive TTYs)
 kbash_banner
-# -----------------------------------------------------------------------------
-
-
-#!/bin/bash
-# One-click installer for kbash.sh
-
-set -e
-
-# Variables
-REPO_RAW_BASE="https://raw.githubusercontent.com/kainatquaderee/kbash/main"
-KBASH_FILE="$HOME/.kbash.sh"
-BASHRC="$HOME/.bashrc"
+#----------------------------------------------------------------
 
 echo "Installing kbash.sh..."
 
