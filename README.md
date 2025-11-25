@@ -18,6 +18,6 @@ bash helpers and scripts for Kainat OS
 | ...             | cd ../..    | Move up two directories |
 | ....            | cd ../../.. | Move up three directories |
 | ~               | cd ~        | Go to home directory |
-| ./<dir>         | cd ./<dir>  | Enter a directory in the current folder |
-| ../<dir>        | cd ../<dir> | Enter a directory in the parent folder |
-| <dir>           | cd <dir>    | Auto-cd into a directory typed directly |
+| ./(dir)         | cd ./(dir)  | Enter a directory in the current folder |
+| ../(dir)        | cd ../(dir) | Enter a directory in the parent folder |
+| (dir)           | cd (dir)    | Auto-cd into a directory typed directly |
