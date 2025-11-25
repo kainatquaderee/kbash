@@ -1,5 +1,46 @@
 #!/bin/bash
-# ~/.kbash.sh - Bash Oh My Zsh-like features
+# ~/.kbash.sh 
+# -----------------------------------------------------------------------------
+# KBASH colorful welcome banner
+# Prints only for interactive TTYs
+# -----------------------------------------------------------------------------
+kbash_banner() {
+    # Only run in interactive shells and when stdout is a tty
+    [[ $- != *i* ]] && return
+    [[ -t 1 ]] || return
+
+    local RESET='\033[0m'
+    local BOLD='\033[1m'
+    local colors=(
+        '\033[1;31m'  # red
+        '\033[1;33m'  # yellow
+        '\033[1;32m'  # green
+        '\033[1;36m'  # cyan
+        '\033[1;35m'  # magenta
+    )
+
+    local logo=(
+" K   K  BBBB   AAAAA  SSSS  H   H"
+" K  K   B   B  A   A  S     H   H"
+" KKK    BBBB   AAAAA   SSS  HHHHH"
+" K  K   B   B  A   A      S H   H"
+" K   K  BBBB   A   A  SSSS  H   H"
+    )
+
+    # Print with gradient + slight delay for a subtle animation
+    for i in "${!logo[@]}"; do
+        printf "%b%s%b\n" "${colors[i % ${#colors[@]}]}" "${logo[i]}" "$RESET"
+        # very short pause (feel free to remove or reduce)
+        sleep 0.04
+    done
+
+    printf "\n%b%s%b %b\n\n" "${colors[2]}" "${BOLD}KBASH${RESET}" "${colors[3]}" "— Bash, but better." "$RESET"
+}
+
+# call banner (will run only in interactive TTYs)
+kbash_banner
+# -----------------------------------------------------------------------------
+
 
 # ----- History & Search -----
 bind '"\e[A": history-search-backward'  # Up arrow searches by prefix
