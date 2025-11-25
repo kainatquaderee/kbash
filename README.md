@@ -1,6 +1,14 @@
 # kbash
 bash helpers and scripts for Kainat OS
 
+### Install kbash.sh
+
+Run this in your terminal:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/kainatquaderee/kbash/refs/heads/main/install-kbash.sh)"
+```
+
 # Bash Aliases & Navigation Cheat Sheet
 
 | Alias / Shortcut | Command | Description |
@@ -21,3 +29,4 @@ bash helpers and scripts for Kainat OS
 | ./(dir)         | cd ./(dir)  | Enter a directory in the current folder |
 | ../(dir)        | cd ../(dir) | Enter a directory in the parent folder |
 | (dir)           | cd (dir)    | Auto-cd into a directory typed directly |
+
